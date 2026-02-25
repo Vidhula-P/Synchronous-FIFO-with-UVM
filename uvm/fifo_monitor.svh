@@ -4,6 +4,8 @@ class fifo_monitor extends uvm_monitor;
 
   virtual fifo_if dut_vif;
   uvm_analysis_port  #(fifo_transaction) mon_analysis_port;
+  
+  logic rd_en_delayed;
 
   function new(string name, uvm_component parent);
     super.new(name, parent);
@@ -23,6 +25,7 @@ class fifo_monitor extends uvm_monitor;
     `uvm_info("MONITOR","Start Monitor", UVM_MEDIUM)
     forever begin
       @(negedge dut_vif.clk);   
+      rd_en_delayed <= dut_vif.tb.rd_en;
       if(dut_vif.tb.wr_en) begin
         txn = fifo_transaction::type_id::create("txn", this);
         txn.op = FIFO_WRITE;
@@ -30,7 +33,7 @@ class fifo_monitor extends uvm_monitor;
       	`uvm_info("MONITOR",$sformatf("Writing %h", txn.wdata), UVM_MEDIUM)
         mon_analysis_port.write(txn);
       end
-      if(dut_vif.tb.rd_en) begin
+      if(rd_en_delayed) begin
         txn = fifo_transaction::type_id::create("txn", this);
         txn.op = FIFO_READ;
         txn.rdata = dut_vif.tb.rdata;

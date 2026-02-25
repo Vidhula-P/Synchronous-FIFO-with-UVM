@@ -36,6 +36,12 @@ class fifo_sequence extends uvm_sequence#(fifo_transaction);
       finish_item(req);
       `uvm_info("SEQ", $sformatf("Sent transaction: %h", req.wdata), UVM_MEDIUM)
     end
+    repeat(3) begin
+      req = fifo_transaction::type_id::create("req");
+      req.op = FIFO_READ;
+      start_item(req);
+      finish_item(req);
+    end
   endtask: body
 
 endclass
