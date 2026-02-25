@@ -11,6 +11,7 @@ class fifo_agent extends uvm_agent;
   endfunction
 
   function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
     monitor = fifo_monitor ::type_id::create("monitor", this);
     if(is_active == UVM_ACTIVE) begin //active by default
       driver = fifo_driver ::type_id::create("driver", this);

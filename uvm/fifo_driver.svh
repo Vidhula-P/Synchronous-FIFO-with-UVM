@@ -9,6 +9,7 @@ class fifo_driver extends uvm_driver #(fifo_transaction);
   endfunction
 
   function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
     // Get interface reference from config database
     if(!uvm_config_db#(virtual fifo_if)::get(this, "", "dut_vif", dut_vif)) begin
       `uvm_error("", "uvm_config_db::get failed")

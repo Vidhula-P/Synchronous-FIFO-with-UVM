@@ -8,6 +8,7 @@ package fifo_testbench_pkg;
   `include "fifo_driver.svh"
   `include "fifo_monitor.svh"
   `include "fifo_agent.svh"
+  `include "fifo_scoreboard.svh"
   `include "fifo_env.svh"
   `include "fifo_test.svh"
 endpackage
