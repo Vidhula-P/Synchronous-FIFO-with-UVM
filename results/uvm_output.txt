@@ -1,11 +1,11 @@
 With verbosity set as UVM_LOW-
 
 UVM_INFO @ 0: reporter [RNTST] Running test fifo_test...
-UVM_INFO fifo_scoreboard.svh(18) @ 20: uvm_test_top.env.sb [SB] Scoreboard sees- wdata = 89abcdef rdata = 0
-UVM_INFO fifo_scoreboard.svh(18) @ 30: uvm_test_top.env.sb [SB] Scoreboard sees- wdata = 1234567 rdata = 0
-UVM_INFO fifo_scoreboard.svh(18) @ 40: uvm_test_top.env.sb [SB] Scoreboard sees- wdata = 11111111 rdata = 0
+UVM_INFO fifo_scoreboard.svh(34) @ 60: uvm_test_top.env.sb [SB] [PASS] Expected = 89abcdef Received = 89abcdef
+UVM_INFO fifo_scoreboard.svh(34) @ 70: uvm_test_top.env.sb [SB] [PASS] Expected = 1234567 Received = 1234567
+UVM_INFO fifo_scoreboard.svh(34) @ 80: uvm_test_top.env.sb [SB] [PASS] Expected = 11111111 Received = 11111111
 UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 100: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO fifo_scoreboard.svh(22) @ 100: uvm_test_top.env.sb [SB] Total transactions = 3
+UVM_INFO fifo_scoreboard.svh(42) @ 100: uvm_test_top.env.sb [SB] Total transactions = 6
 UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(851) @ 100: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
